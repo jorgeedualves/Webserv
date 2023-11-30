@@ -11,10 +11,10 @@ DIRS    := server controllers models views config
 vpath %.hpp $(DIRS)
 vpath %.cpp $(DIRS)
 
-HEADERS := Server.hpp EventListener.hpp Connection.hpp HTTPClient.hpp
+HEADERS := Server.hpp EventListener.hpp Connection.hpp HTTPClient.hpp RequestController.hpp
 HEADERS += Dispatcher.hpp HTTPRequest.hpp HTTPResponse.hpp ConfigSpec.hpp HTTPResponseViews.hpp
 
-SOURCES := main.cpp Server.cpp EventListener.cpp Connection.cpp HTTPClient.cpp
+SOURCES := main.cpp Server.cpp EventListener.cpp Connection.cpp HTTPClient.cpp RequestController.cpp
 SOURCES += Dispatcher.cpp HTTPRequest.cpp HTTPResponse.cpp ConfigSpec.cpp HTTPResponseViews.cpp
 
 OBJS     := $(addprefix $(OBJ_DIR)/, $(SOURCES:.cpp=.o))

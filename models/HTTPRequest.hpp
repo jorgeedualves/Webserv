@@ -32,4 +32,4 @@ private:
     void parseBody(std::istringstream& stream);
 };
 
-#endif // !HTTP_REQUEST_HPP
+#endif

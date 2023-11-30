@@ -20,4 +20,4 @@ private:
     int m_limitBodySize;
 };
 
-#endif // !CONFIG_SPEC_HPP
+#endif

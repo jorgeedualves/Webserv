@@ -1,3 +1,5 @@
+// RequestController.hpp
+
 #ifndef REQUEST_CONTROLLER_HPP
 #define REQUEST_CONTROLLER_HPP
 
@@ -7,57 +9,16 @@
 class RequestController
 {
 public:
-    RequestController()
-    {
-    }
+    RequestController();
 
     // Método para lidar com uma solicitação HTTP
-    void handleRequest(const HTTPRequest& request, HTTPResponse& response)
-    {
-      // Verifica o método HTTP (GET, POST, DELETE)
-        std::string method = request.method();  // Corrigido aqui
-        std::string url = request.URL();        // Adicionado para obter a URL
-
-        // Roteamento com base no método
-        if (method == "GET")
-        {
-            handleGetRequest(request, response);
-        }
-        else if (method == "POST")
-        {
-            handlePostRequest(request, response);
-        }
-        else if (method == "DELETE")
-        {
-            handleDeleteRequest(request, response);
-        }
-        else
-        {
-            // Método não suportado
-            response.setStatus(405);
-            response.setBody("Method not allowed");
-        }
-    }
+    void handleRequest(const HTTPRequest& request, HTTPResponse& response);
 
 private:
-    // Manipulador para solicitações GET
-    void handleGetRequest(const HTTPRequest& request, HTTPResponse& response)
-    {
-        // Lógica para manipular solicitações GET
-        // Pode incluir leitura de arquivos estáticos, geração dinâmica de conteúdo, etc.
-    }
-
-    // Manipulador para solicitações POST
-    void handlePostRequest(const HTTPRequest& request, HTTPResponse& response)
-    {
-        // Lógica para manipular solicitações POST
-    }
-
-    // Manipulador para solicitações DELETE
-    void handleDeleteRequest(const HTTPRequest& request, HTTPResponse& response)
-    {
-        // Lógica para manipular solicitações DELETE
-    }
+    // Métodos específicos para manipular cada tipo de solicitação
+    void handleGetRequest(const HTTPRequest& request, HTTPResponse& response);
+    void handlePostRequest(const HTTPRequest& request, HTTPResponse& response);
+    void handleDeleteRequest(const HTTPRequest& request, HTTPResponse& response);
 };
 
 #endif

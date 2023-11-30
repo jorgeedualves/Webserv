@@ -28,4 +28,4 @@ private:
     std::string m_body;
 };
 
-#endif // !HTTP_RESPONSE_HPP
+#endif
