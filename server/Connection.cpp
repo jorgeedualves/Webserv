@@ -1,11 +1,13 @@
 #include <fcntl.h>
 #include <unistd.h>
 #include <sys/socket.h>
-
+#include <stdio.h>
 #include "Connection.hpp"
 #include "Dispatcher.hpp"
 #include "HTTPRequest.hpp"
 #include "HTTPResponse.hpp"
+#include "HTTPResponseViews.hpp"
+
 
 Connection::Connection(Server* server, Dispatcher* dispatcher)
     : m_server(server)

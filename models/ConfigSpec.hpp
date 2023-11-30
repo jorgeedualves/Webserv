@@ -6,6 +6,8 @@
 class ConfigSpec
 {
 public:
+   ConfigSpec(int port, const std::string& serverName);
+
     int getPort() const;
     std::string getServerName() const;
     std::string getHostName() const;
