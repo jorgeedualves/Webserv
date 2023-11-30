@@ -14,8 +14,9 @@ public:
     // Método para lidar com uma solicitação HTTP
     void handleRequest(const HTTPRequest& request, HTTPResponse& response)
     {
-        // Verifica o método HTTP (GET, POST, DELETE)
-        std::string method = request.getMethod();
+      // Verifica o método HTTP (GET, POST, DELETE)
+        std::string method = request.method();  // Corrigido aqui
+        std::string url = request.URL();        // Adicionado para obter a URL
 
         // Roteamento com base no método
         if (method == "GET")
@@ -33,7 +34,7 @@ public:
         else
         {
             // Método não suportado
-            response.setStatus(405, "Method Not Allowed");
+            response.setStatus(405);
             response.setBody("Method not allowed");
         }
     }

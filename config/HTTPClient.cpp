@@ -10,6 +10,8 @@
 #include <cstdlib>
 #include <unistd.h>
 
+class Server;
+
 void sendHttpRequest(const char* serverIP, int serverPort, const char* path) {
     // Criação do socket
     int clientSocket = socket(AF_INET, SOCK_STREAM, 0);
